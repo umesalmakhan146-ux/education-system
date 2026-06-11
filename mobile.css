@@ -1,0 +1,109 @@
+/* --- UNIVERSAL MOBILE FIX (Paste this at the bottom of <style> in every file) --- */
+@media (max-width: 768px) {
+
+    /* 1. Navbar ko compact banao */
+    .navbar {
+        flex-direction: column; /* Logo upar, links neeche */
+        height: auto;
+        padding: 15px 5%;
+        background: rgba(13, 15, 18, 1); /* Mobile par background solid rakhein */
+    }
+
+    .logo {
+        line-height: normal; /* Height reset karo */
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        gap: 15px;
+        flex-wrap: wrap; /* Agar space kam ho to line break karein */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 12px; /* Font size chhota karo */
+        letter-spacing: 1px;
+    }
+
+    /* 2. Hero Sections (Headings) ko chhota karo */
+    .courses-header h1, 
+    .teachers-header h1, 
+    .events-header h1, 
+    .contact-hero h1,
+    .herosection h1 {
+        font-size: 2rem !important; /* Heading size kam karo */
+    }
+
+    .courses-header p, .events-header p {
+        font-size: 0.8rem;
+    }
+
+    .courses-header, .teachers-header, .events-header, .contact-hero {
+        height: auto; /* Auto height le lo fixed ki jagah */
+        padding: 80px 20px 40px 20px; /* Top padding zyada taake navbar na kate */
+        margin-top: 0;
+    }
+
+    /* 3. Grids ko Single Column banao (Most Important) */
+    /* Ye line Course, Teacher, aur Events ke cards ko ek ke neeche ek laga degi */
+    .course-grid, 
+    .teachers-grid, 
+    .events-grid {
+        grid-template-columns: 1fr; /* Ek hi column */
+        gap: 30px;
+    }
+
+    /* 4. Card Width ko full karo */
+    .course-card, 
+    .teacher-profile, 
+    .event-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 5. Contact Page Specifics */
+    .contact-wrapper {
+        flex-direction: column; /* Form aur Info upar neeche ho jayenge */
+        padding: 0 10px;
+    }
+    
+    .contact-info, .contact-form-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .map-section {
+        height: 250px;
+    }
+
+    /* 6. Footer ko stack karo */
+    .footer-container {
+        grid-template-columns: 1fr; /* Ek ke neeche ek */
+        text-align: center;
+    }
+    
+    .footer-col h3::before {
+        left: 50%; /* Center the underline */
+        transform: translateX(-50%);
+    }
+
+    /* 7. Home Page Video/Layout Fix */
+    .video video {
+        height: 60vh; /* Video height kam karo */
+    }
+    
+    .layout {
+        font-size: 2rem !important; /* Video ka text chhota karo */
+        padding: 0 20px;
+    }
+    
+    .aboutus img {
+        width: 100%; /* Image full width */
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+}

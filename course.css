@@ -1,0 +1,404 @@
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0f12;
+    color: #bcbcbc;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR STYLING (DESKTOP) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    height: 80px;
+    background: rgba(13, 15, 18, 0.95);
+    backdrop-filter: blur(10px); /* Premium blurry glassmorphism */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    z-index: 1002; /* Stacked above menu layer on mobile */
+}
+
+.logo span {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* Desktop Hidden Toggles */
+.menu-toggle-checkbox,
+.menu-btn {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #bcbcbc;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+}
+
+/* Animated Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* --- HERO HEADER SECTION --- */
+.courses-header {
+    margin-top: 80px; 
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+    background: linear-gradient(180deg, rgba(13,15,18,1) 0%, rgba(13,15,18,0) 100%);
+}
+
+.courses-header h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    margin-bottom: 12px;
+}
+
+.courses-header p {
+    color: #00e5ff;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* --- COURSES CONTAINER & GRID --- */
+.courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* --- COURSE CARD DESIGN --- */
+.course-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.15);
+    border-color: rgba(0, 229, 255, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.course-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Keeps footer neatly aligned across cards */
+}
+
+.category-tag {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: #00e5ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.card-content h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #a0a5b0;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 18px;
+}
+
+.price {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.enroll-btn {
+    background: transparent;
+    color: #00e5ff;
+    text-decoration: none;
+    padding: 8px 22px;
+    border: 2px solid #00e5ff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: #00e5ff;
+    color: #0d0f12;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+}
+
+/* --- PREMIUM FOOTER --- */
+.premium-footer {
+    background-color: #07080a;
+    color: #9499a6;
+    padding: 80px 0 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-col h3::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #00e5ff;
+}
+
+.footer-logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.footer-logo span {
+    color: #00e5ff;
+}
+
+.brand-col p {
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #9499a6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #00e5ff;
+    padding-left: 5px;
+}
+
+.contact-col p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.contact-col i {
+    color: #00e5ff;
+    margin-top: 3px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding: 25px 20px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #525763;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 992px) {
+    .navbar { padding: 0 4%; }
+    .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    .navbar { 
+        height: 70px; 
+        padding: 0 5%;
+    }
+    
+    .logo { 
+        font-size: 22px; 
+    }
+
+    /* Displays Burger Menu Button on Mobile Screen */
+    .menu-btn {
+        display: block;
+        color: #ffffff;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 1002;
+        transition: color 0.3s ease;
+    }
+    
+    .menu-btn:hover {
+        color: #00e5ff;
+    }
+
+    /* Responsive Slide-in Menu Drawer */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden by default */
+        width: 70%;
+        height: 100vh;
+        background: rgba(13, 15, 18, 0.98);
+        backdrop-filter: blur(15px);
+        box-shadow: -5px 0 25px rgba(0,0,0,0.6);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+        z-index: 1001;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+
+    .nav-links a::after {
+        bottom: -10px;
+    }
+
+    /* Pure CSS Click Toggle Activation */
+    .menu-toggle-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+
+    /* Padding Adjustments for Content spacing below Navbar */
+    .courses-header { 
+        margin-top: 70px; 
+        padding: 60px 20px 20px 20px; 
+    }
+    .courses-header h1 { font-size: 2.2rem; }
+    .courses-header p { font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-col h3::before { left: 50%; transform: translateX(-50%); }
+    .contact-col p { justify-content: center; }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUTECH - Events & Activities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">EDU<span>TECH</span></div>
+    
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <label for="menu-toggle" class="hamburger-icon">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <div class="nav-links">
+        <a href="home.html">HOME</a>  
+        <a href="course.html">COURSES</a>
+        <a href="teacher.html">TEACHERS</a>
+        <a href="event.html" class="active">EVENTS</a>    
+        <a href="contact.html">CONTACT</a>
+    </div>
+</nav>
+
+<div class="events-header">
+    <h1 class="glitch-text" data-text="EVENTS">EVENTS</h1>
+    <p class="sub-heading">SYSTEM_READY // LOADING_ACTIVITIES</p>
+</div>
+
+<div class="filter-container">
+    <button class="filter-btn active" onclick="filterEvents('all')">ALL</button>
+    <button class="filter-btn" onclick="filterEvents('tech')">TECH</button>
+    <button class="filter-btn" onclick="filterEvents('sports')">SPORTS</button>
+    <button class="filter-btn" onclick="filterEvents('arts')">ARTS</button>
+</div>
+
+<div class="events-grid">
+
+    <div class="event-card tech">
+        <div class="card-header">
+            <div class="date-badge">OCT 15</div>
+            <span class="category-tag">TECH</span>
+        </div>
+        <h3>Robo-War Arena</h3>
+        <p>Build your battle bot and fight for glory in the ultimate robotics championship.</p>
+        <div class="card-footer">
+            <span class="location-text">Main Hall</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="event-card sports">
+        <div class="card-header">
+            <div class="date-badge">NOV 02</div>
+            <span class="category-tag tag-sports">SPORTS</span>
+        </div>
+        <h3>Neon Night Run</h3>
+        <p>A marathon under the city lights with neon face paint and EDM music.</p>
+        <div class="card-footer">
+            <span class="location-text">Sports Ground</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="event-card arts">
+        <div class="card-header">
+            <div class="date-badge">NOV 20</div>
+            <span class="category-tag tag-arts">ARTS</span>
+        </div>
+        <h3>Digital Graffiti Wall</h3>
+        <p>Projection mapping art competition. Paint the school building with light.</p>
+        <div class="card-footer">
+            <span class="location-text">Art Block</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="event-card tech">
+        <div class="card-header">
+            <div class="date-badge">DEC 05</div>
+            <span class="category-tag">TECH</span>
+        </div>
+        <h3>AI Gaming Tournament</h3>
+        <p>Compete against AI bots in strategy games. Test your mind vs machine.</p>
+        <div class="card-footer">
+            <span class="location-text">Lab 2</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="event-card sports">
+        <div class="card-header">
+            <div class="date-badge">DEC 12</div>
+            <span class="category-tag tag-sports">SPORTS</span>
+        </div>
+        <h3>Cyber Chess League</h3>
+        <p>Inter-school chess championship with digital scoreboards and live streaming.</p>
+        <div class="card-footer">
+            <span class="location-text">Library</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="event-card arts">
+        <div class="card-header">
+            <div class="date-badge">DEC 25</div>
+            <span class="category-tag tag-arts">ARTS</span>
+        </div>
+        <h3>Winter EDM Gala</h3>
+        <p>Music production showcase and live DJ performance by students.</p>
+        <div class="card-footer">
+            <span class="location-text">Auditorium</span>
+            <a href="#" class="join-btn">JOIN <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="premium-footer">
+    <div class="footer-container">
+        <div class="footer-col brand-col">
+            <h2 class="footer-logo">EDU<span>TECH</span></h2>
+            <p>Shaping futures, inspiring minds, and building a community of lifelong learners with elite education standards.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Academy</a></li>
+                <li><a href="#">Our Faculty</a></li>
+                <li><a href="#">Latest News</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Academics</h3>
+            <ul>
+                <li><a href="#">Admissions 2026</a></li>
+                <li><a href="#">Fee Structure</a></li>
+                <li><a href="#">Campus Life</a></li>
+                <li><a href="#">Student Portal</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Main Boulevard, Garden Town, Lahore, Pakistan</p>
+            <p><i class="fas fa-phone-alt"></i> +92 42 111 222 333</p>
+            <p><i class="fas fa-envelope"></i> info@edutech.edu.pk</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 EduTech Academy. All Rights Reserved. Designed with Excellence.</p>
+    </div>
+</footer>
+
+<script>
+    function filterEvents(category) {
+        const cards = document.querySelectorAll('.event-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        event.target.classList.add('active');
+
+        cards.forEach(card => {
+            if (category === 'all') {
+                card.style.display = 'block';
+                setTimeout(() => card.style.opacity = '1', 50);
+            } else {
+                if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 50);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
